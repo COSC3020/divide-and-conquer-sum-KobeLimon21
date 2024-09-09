@@ -25,3 +25,19 @@ and solve it as we did in the lectures. Give the final $\Theta$ complexity.
 
 Describe your reasoning and the conclusion you've come to. Your reasoning is the
 most important part. Add your answer to this markdown file.
+
+
+Sources
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/slice   to help explain and test how slice worked to implement the three sub arrays 
+
+https://reintech.io/blog/understanding-divide-conquer-javascript   help further explain divide and conquer algorithms
+
+The recurrence relation for this function is 3t (n/3) + 1, as the array is divided into three parts with each recursive call (third1,third2,third3). t(n) = 3t(n/3) + 1 substitute 3(3t(n/9)+1)1 9t(n/9) +2 substitute 9(9t(n/27)+1)+2 27t(n/27)+3 general pattern found here with constant being multiplied by i power each expansion 3^i (n/3^i) + i i = log₃(n) t(n) = 3^log₃(n) (n/3^log₃(n)) + log₃(n)
+
+3^log₃(n) = n using law of exponants n/n = 1 n * 1 = n n + log₃(n) n is the leading term here which would bring us to T(n) ∈ O(n) Since n grows quicker than log₃(n) , this makes it grow linearly.
+
+
+
+"I certify that I have listed all sources used to complete this exercise, including the use of any Large Language Models. All of the work is my own, except where stated otherwise. I am aware that plagiarism carries severe penalties and that if plagiarism is suspected, charges may be filed against me without prior notice."
+
+
